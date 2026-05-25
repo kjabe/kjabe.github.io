@@ -205,9 +205,9 @@ const CAREER_TIMELINE = [
   },
   {
     id: "himc",
-    start: "2022",
+    start: "2023",
     end: "2026",
-    period: "2022 — 2026",
+    period: "2023 — 2026",
     role: "Computational Biologist",
     org: "HIMC, Stanford Medicine",
     orgLong: "Stanford Medicine · Human Immune Monitoring Center",

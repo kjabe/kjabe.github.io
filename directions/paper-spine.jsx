@@ -1069,7 +1069,7 @@ function PaperSpine({ tweaks = {} }) {
             <div style={{ ...psStyles.contactLabel, ...(responsive.contactLabel || {}) }}>email</div>
             <div><a href={`mailto:${c.links.email}`} style={psStyles.link}>{c.links.email}</a></div>
             <div style={{ ...psStyles.contactLabel, ...(responsive.contactLabel || {}) }}>linkedin</div>
-            <div><a href={c.links.linkedin.url} style={psStyles.link}>koji-abe-uw-bioe</a></div>
+            <div><a href={c.links.linkedin.url} style={psStyles.link} target="_blank" rel="noopener">koji-abe-uw-bioe</a></div>
             <div style={{ ...psStyles.contactLabel, ...(responsive.contactLabel || {}) }}>scholar</div>
             <div><a href={c.links.scholar.url} style={psStyles.link} target="_blank" rel="noopener">Koji Abe</a></div>
           </div>
