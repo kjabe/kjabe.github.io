@@ -106,7 +106,7 @@ const PROJECTS = [
     featured: false,
     tags: ["point-of-care", "diagnostics", "influenza", "paper-microfluidics"],
     summary:
-      "Co-developed (2nd author) a self-contained disposable device that runs a sandwich immunoassay for influenza A/B from a nasal swab — no instrumentation, ~35-min total time. Clinically evaluated at Seattle Children's Hospital. Anal. Chem. 2017, 89, 5776–5783.",
+      "Co-developed (2nd author) a self-contained disposable device that runs a sandwich immunoassay for influenza A/B from a nasal swab — no instrumentation, ~35-min total time. Clinically evaluated at Seattle Children's Hospital.",
     paperUrl: "https://pubs.acs.org/doi/abs/10.1021/acs.analchem.6b04801",
     mark: "./project-marks/influenza-swab-device-cassette.svg",
     isPlaceholder: false,
@@ -120,7 +120,7 @@ const PROJECTS = [
     featured: false,
     tags: ["paper-microfluidics", "inkjet", "colorimetric-sensing", "analytical-chemistry"],
     summary:
-      "First-author paper introducing inkjet printing as a single-apparatus method for fabricating paper-based microfluidic devices — patterning 550 μm hydrophilic channels by inkjet-etching a poly(styrene) layer, then printing colorimetric sensing chemistry into wells. Anal. Chem. 2008, 80, 6928–6934. Part of the >1,300-citation pair (top ~1% most-cited in Chemistry in its published year).",
+      "First-author paper introducing inkjet printing as a single-apparatus method for fabricating paper-based microfluidic devices — patterning 550 μm hydrophilic channels by inkjet-etching a poly(styrene) layer, then printing colorimetric sensing chemistry into wells. Part of the >1,300-citation pair (top ~1% most-cited in Chemistry in its published year).",
     paperUrl: "https://pubs.acs.org/doi/10.1021/ac800604v",
     mark: "./project-marks/inkjet-microfluidic-paper-chip.svg",
     isPlaceholder: false,
