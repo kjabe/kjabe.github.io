@@ -40,7 +40,7 @@ const LOCATION = { text: "Stanford, California", isPlaceholder: false };
 // and Elsewhere on the live site. Blog URL pending; when added, append an
 // <a> in the section JSX and reintroduce blogUrl/blogLabel here.
 const OFF_THE_CLOCK = {
-  text: "Arsenal supporter (Gooner). Jazz/pop piano at home. Blog to be updated.",
+  text: "Arsenal supporter — Gooner enough to set alarms for the early-morning Pacific kickoffs. Jazz and pop piano at home, mostly for the chord changes. A blog is in the works; link to follow.",
   isPlaceholder: true,
 };
 
