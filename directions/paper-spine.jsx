@@ -601,6 +601,10 @@ const psStyles = {
     boxShadow: "0 0 0 4px var(--ps-spine-accent-glow, rgba(53,90,133,0.16))",
   },
   spineCard: {
+    // position:relative so the mobile lab-mark badge (absolutely positioned
+    // inside the card) anchors to the card. No-op for the desktop layout —
+    // the card was already in normal flow inside its grid cell.
+    position: "relative",
     background: "var(--ps-card, #ffffff)",
     border: "1px solid var(--ps-rule, #d9d4c7)",
     borderRadius: 6,
@@ -724,16 +728,22 @@ function buildResponsive(isMobile, isNarrow) {
     // column 2. Year is in the card so no separate row/col is needed for it.
     spineRow: { gridTemplateColumns: "32px 1fr", marginBottom: 32 },
     spineDot: { left: 14, transform: "translate(-50%, 0)", top: 22 },
-    // Mobile: card is always on the right, so the 32-px mark slots in just
-    // to the right of the rail-side dot (1-px gap). Mark extends ~2 px into
-    // the card-text area — visually negligible against the slate-blue mark.
-    spineMark: { left: 22, top: 13, width: 32, height: 32 },
+    // Mobile: the mark moves INSIDE the card as a top-right badge (PSSpineRow
+    // re-parents it when isMobile). We neutralise the desktop `left` offset,
+    // anchor with `right`, and shrink to 24 px so it reads as a corner badge
+    // rather than a primary element. The base spineMark style still supplies
+    // position:absolute + the opacity reveal transition.
+    spineMark: { left: "auto", right: 12, top: 12, width: 24, height: 24 },
     spineCardLeft: { gridColumn: "2 / 3", textAlign: "left", transform: "translateX(-12px)" },
     spineCardRight: { gridColumn: "2 / 3", textAlign: "left", transform: "translateX(12px)" },
     projectRow: { gridTemplateColumns: "1fr", gap: 14 },
     thumb: { width: "100%", height: 100 },
     contactGrid: { gridTemplateColumns: "1fr", gap: "2px 0" },
     contactLabel: { paddingTop: 10 },
+    // Stack the footer: at 375 px the two spans collide under space-between
+    // (the left span wraps "abe" to a 2nd line while the date span starts
+    // on line 1 of its column, producing "© 2026 kojisunday, may 24…").
+    foot: { flexDirection: "column", gap: 6, alignItems: "flex-start" },
   };
 }
 
@@ -879,19 +889,27 @@ function PSSpineRow({ entry, side, isLast, responsive, reduceMotion, scrollRef }
     ...reducedMotionMark,
   };
 
+  // The mark element is the same in both layouts — only its parent differs.
+  // Desktop: rendered as a sibling of the card, absolutely positioned within
+  // the row (opposite side of the dot from the card). Mobile: rendered as a
+  // child of the card so it anchors to the card's top-right as a badge,
+  // avoiding the rail-area overlap the old layout had.
+  const markImg = entry.lab && (
+    <img
+      className="ps-spine-mark"
+      src={entry.lab === "wet" ? "./lab-marks-blue/wet-droplet-chop.svg?v=2" : "./lab-marks-blue/dry-prompt.svg?v=2"}
+      width="32" height="32"
+      alt={`${entry.lab} lab`}
+      style={markStyle}
+    />
+  );
+
   return (
     <div ref={ref} className="ps-spine-row" style={rowStyle}>
       <div className="ps-spine-dot" role="img" aria-label={ariaLabel} style={dotStyle} />
-      {entry.lab && (
-        <img
-          className="ps-spine-mark"
-          src={entry.lab === "wet" ? "./lab-marks-blue/wet-droplet-chop.svg?v=2" : "./lab-marks-blue/dry-prompt.svg?v=2"}
-          width="32" height="32"
-          alt={`${entry.lab} lab`}
-          style={markStyle}
-        />
-      )}
+      {!isMobile && markImg}
       <div className="ps-spine-card" style={cardStyle}>
+        {isMobile && markImg}
         <div className="ps-spine-year" style={yearStyleInCard}>{entry.period}</div>
         <h3 style={psStyles.roleH}>{entry.isPlaceholder ? <Ph>{entry.role}</Ph> : entry.role}</h3>
         <p style={psStyles.roleOrg}>{entry.isPlaceholder ? <Ph>{entry.org}</Ph> : entry.org} · {entry.location}</p>
@@ -1075,7 +1093,7 @@ function PaperSpine({ tweaks = {} }) {
           </div>
         </section>
 
-        <footer className="ps-print-hide" style={psStyles.foot}>
+        <footer className="ps-print-hide" style={{ ...psStyles.foot, ...(responsive.foot || {}) }}>
           <span>© 2026 koji abe</span>
           <span><PSHeaderStrip lowercase /></span>
         </footer>
