@@ -892,7 +892,7 @@ function PSSpineRow({ entry, side, isLast, responsive, reduceMotion, scrollRef }
   const markImg = entry.lab && (
     <img
       className="ps-spine-mark"
-      src={entry.lab === "wet" ? "./lab-marks-blue/wet-droplet-chop.svg?v=3" : "./lab-marks-blue/dry-prompt.svg?v=2"}
+      src={entry.lab === "wet" ? "./lab-marks-blue/wet-droplet-chop.svg?v=4" : "./lab-marks-blue/dry-prompt.svg?v=2"}
       width="24" height="24"
       alt={`${entry.lab} lab`}
       style={markStyle}

@@ -5,6 +5,6 @@
   <!-- flask body -->
   <path d="M 42 28 L 42 44 L 30 70 A 6 6 0 0 0 35 78 L 65 78 A 6 6 0 0 0 70 70 L 58 44 L 58 28"
         stroke="#355a85" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- fill-level mark at the middle of the neck (thin calibration mark) -->
-  <line x1="46" y1="36" x2="54" y2="36" stroke="#355a85" stroke-width="3" stroke-linecap="round"/>
+  <!-- fill-level mark at the middle of the neck (matches flask edge stroke) -->
+  <line x1="46" y1="36" x2="54" y2="36" stroke="#355a85" stroke-width="8" stroke-linecap="round"/>
 </svg>
