@@ -736,7 +736,12 @@ function buildResponsive(isMobile, isNarrow) {
     spineCardLeft: { gridColumn: "2 / 3", textAlign: "left", transform: "translateX(-12px)" },
     spineCardRight: { gridColumn: "2 / 3", textAlign: "left", transform: "translateX(12px)" },
     projectRow: { gridTemplateColumns: "1fr", gap: 14 },
-    thumb: { width: "100%", height: 100 },
+    // Compact mark box: the grid is still a single column (so the thumb sits
+    // on its own row above the title) but the box shrinks from full-width to
+    // 56 × 40 px — roughly half the desktop 120 × 84, same 1.4 aspect ratio,
+    // so the SVG (objectFit: contain) scales identically. Tighter padding
+    // gives the small mark more legible inner room.
+    thumb: { width: 56, height: 40, padding: 4 },
     contactGrid: { gridTemplateColumns: "1fr", gap: "2px 0" },
     contactLabel: { paddingTop: 10 },
     // Stack the footer: at 375 px the two spans collide under space-between
