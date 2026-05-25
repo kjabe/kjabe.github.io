@@ -625,20 +625,25 @@ const psStyles = {
     textTransform: "uppercase",
     color: "var(--ps-muted, #635e52)",
     margin: "0 0 6px",
+    // Keep the year clear of the top-right lab-mark badge (24 px wide + 12 px
+    // right offset = 36 px). Invisible on left-aligned cards (text already
+    // starts from the left); shifts the year inboard on right-aligned cards.
+    paddingRight: 36,
     transition: "color .35s",
   },
   cardYearOn: { color: "var(--ps-spine-accent, #355a85)" },
-  // Wet / dry lab mark — sits next to the spine dot in the middle column,
-  // on the same side as the card. Absolutely positioned within the spine
-  // row (which has position: relative). Loaded as <img> so the SVG keeps
-  // its own prefers-color-scheme adaptation; doesn't recolor on the spine
-  // reveal (the dot already carries that signal). Source files:
-  // ./lab-marks/wet-droplet-chop.svg + ./lab-marks/dry-prompt.svg.
+  // Wet / dry lab mark — top-right corner badge inside the card. Absolutely
+  // positioned within the card (`spineCard` is `position: relative`). Loaded
+  // as <img> so the SVG keeps its own prefers-color-scheme adaptation;
+  // doesn't recolor on the spine reveal (the dot already carries that
+  // signal). Source files: ./lab-marks-blue/wet-droplet-chop.svg +
+  // ./lab-marks-blue/dry-prompt.svg.
   spineMark: {
     position: "absolute",
-    top: 15,                                              // 32-px mark vertically centered with the 14-px dot (dot center y=31)
-    width: 32,
-    height: 32,
+    top: 12,
+    right: 12,
+    width: 24,
+    height: 24,
     opacity: 0,                                            // hidden until the row enters view; spineMarkOn restores opacity 0.85
     transition: "opacity .65s cubic-bezier(.2,.7,.3,1)",   // matches the card's reveal duration + easing
     zIndex: 2,
@@ -646,8 +651,6 @@ const psStyles = {
   // Applied when useScrollReveal fires inView=true — same trigger as the
   // card slide-in and the dot light-up, so the mark fades in alongside them.
   spineMarkOn: { opacity: 0.85 },
-  spineMarkLeft:  { left: "calc(50% - 60px)" },  // 32-px mark with 21-px gap from dot edge (matches card-to-dot gap): right edge at calc(50% − 28), left = −28 − 32 = −60
-  spineMarkRight: { left: "calc(50% + 28px)" },  // 21-px gap from dot edge — same x as the card's inner edge on the opposite side
 
   roleH: {
     fontFamily: 'var(--ps-display, "Source Serif 4", Georgia, serif)',
@@ -728,12 +731,8 @@ function buildResponsive(isMobile, isNarrow) {
     // column 2. Year is in the card so no separate row/col is needed for it.
     spineRow: { gridTemplateColumns: "32px 1fr", marginBottom: 32 },
     spineDot: { left: 14, transform: "translate(-50%, 0)", top: 22 },
-    // Mobile: the mark moves INSIDE the card as a top-right badge (PSSpineRow
-    // re-parents it when isMobile). We neutralise the desktop `left` offset,
-    // anchor with `right`, and shrink to 24 px so it reads as a corner badge
-    // rather than a primary element. The base spineMark style still supplies
-    // position:absolute + the opacity reveal transition.
-    spineMark: { left: "auto", right: 12, top: 12, width: 24, height: 24 },
+    // (No spineMark override — badge layout is identical at every breakpoint;
+    // the base psStyles.spineMark already carries the top-right badge coords.)
     spineCardLeft: { gridColumn: "2 / 3", textAlign: "left", transform: "translateX(-12px)" },
     spineCardRight: { gridColumn: "2 / 3", textAlign: "left", transform: "translateX(12px)" },
     projectRow: { gridTemplateColumns: "1fr", gap: 14 },
@@ -802,7 +801,7 @@ function useScrollReveal(scrollRef, { threshold = 0.25 } = {}) {
 // computed from the user's clock; temperature is fetched from Open-Meteo
 // (no API key, free). If the fetch fails the temperature half just
 // disappears — no error UI.
-function PSHeaderStrip({ lowercase = false } = {}) {
+function PSHeaderStrip({ lowercase = false, splitTemp = false } = {}) {
   let dateStr = new Date().toLocaleDateString(undefined, {
     weekday: "long", year: "numeric", month: "long", day: "numeric",
   });
@@ -824,11 +823,16 @@ function PSHeaderStrip({ lowercase = false } = {}) {
       .catch(() => { /* swallow — just don't show temp */ });
     return () => { cancelled = true; };
   }, []);
+  // Date and location always travel together as one inline run.
+  // splitTemp = true → temperature breaks onto its own line (used by the
+  // footer on narrow widths where the full strip would otherwise overflow).
   return (
     <React.Fragment>
-      <span>{dateStr}</span>
-      <span> · stanford, ca</span>
-      {temp && <span> · {temp.c} °C / {temp.f} °F</span>}
+      <span>{dateStr} · stanford, ca</span>
+      {temp && (splitTemp
+        ? <React.Fragment><br /><span>{temp.c} °C / {temp.f} °F</span></React.Fragment>
+        : <span> · {temp.c} °C / {temp.f} °F</span>
+      )}
     </React.Fragment>
   );
 }
@@ -839,15 +843,13 @@ function PSHeaderStrip({ lowercase = false } = {}) {
 // usable IntersectionObserver context).
 function PSSpineRow({ entry, side, isLast, responsive, reduceMotion, scrollRef }) {
   const [ref, inView] = useScrollReveal(scrollRef, { threshold: 0.25 });
-  const isMobile = !!responsive.spineRow;
-
   // In mobile layout both sides collapse to column 2, but the tiny translate
   // direction (slide in from left vs right) is still derived from `side` for
-  // visual rhythm.
+  // visual rhythm. `responsive.spineCardLeft` is only populated when we're in
+  // a mobile/narrow breakpoint, so its presence acts as the mobile signal.
+  const mobileSide = side === "left" ? responsive.spineCardLeft : responsive.spineCardRight;
   const desktopSide = side === "left" ? psStyles.spineCardLeft : psStyles.spineCardRight;
-  const sideStyle = isMobile
-    ? (side === "left" ? responsive.spineCardLeft : responsive.spineCardRight)
-    : desktopSide;
+  const sideStyle = mobileSide || desktopSide;
 
   // Layer the card style:
   //   base (opacity 0 + slide-in transform) → side override → inView override →
@@ -867,38 +869,19 @@ function PSSpineRow({ entry, side, isLast, responsive, reduceMotion, scrollRef }
   const ariaLabel = `${entry.period}, ${entry.role} at ${entry.org}`;
   const yearStyleInCard = { ...psStyles.cardYear, ...(inView ? psStyles.cardYearOn : {}) };
 
-  // Lab mark sits next to the dot, OPPOSITE from the card — so each row reads
-  // [mark · dot · card] or [card · dot · mark] depending on which side the
-  // card is on. On mobile the card is always on the right and there's no
-  // room to the left of the rail-side dot, so the mark stays to the right
-  // (positioned by `responsive.spineMark` below).
-  const sideMark = isMobile
-    ? {}
-    : (side === "left" ? psStyles.spineMarkRight : psStyles.spineMarkLeft);
-  // Mark reveal mirrors the card pattern (see lines above): base is invisible,
-  // spineMarkOn fades it in when the IO fires, reduce-motion shortens the
-  // transition. The mark stays hidden behind the card-slide animation until
-  // they both finish together.
+  // Lab mark is a top-right corner badge inside the card at every breakpoint.
+  // Reveal mirrors the card: base is invisible, spineMarkOn fades it in when
+  // the IO fires, reduce-motion shortens the transition. No side-of-dot
+  // positioning and no responsive override to layer in.
   const onMark = inView ? psStyles.spineMarkOn : {};
   const reducedMotionMark = reduceMotion ? { transition: "opacity .3s ease-out" } : {};
-  const markStyle = {
-    ...psStyles.spineMark,
-    ...sideMark,
-    ...(responsive.spineMark || {}),
-    ...onMark,
-    ...reducedMotionMark,
-  };
+  const markStyle = { ...psStyles.spineMark, ...onMark, ...reducedMotionMark };
 
-  // The mark element is the same in both layouts — only its parent differs.
-  // Desktop: rendered as a sibling of the card, absolutely positioned within
-  // the row (opposite side of the dot from the card). Mobile: rendered as a
-  // child of the card so it anchors to the card's top-right as a badge,
-  // avoiding the rail-area overlap the old layout had.
   const markImg = entry.lab && (
     <img
       className="ps-spine-mark"
       src={entry.lab === "wet" ? "./lab-marks-blue/wet-droplet-chop.svg?v=2" : "./lab-marks-blue/dry-prompt.svg?v=2"}
-      width="32" height="32"
+      width="24" height="24"
       alt={`${entry.lab} lab`}
       style={markStyle}
     />
@@ -907,9 +890,8 @@ function PSSpineRow({ entry, side, isLast, responsive, reduceMotion, scrollRef }
   return (
     <div ref={ref} className="ps-spine-row" style={rowStyle}>
       <div className="ps-spine-dot" role="img" aria-label={ariaLabel} style={dotStyle} />
-      {!isMobile && markImg}
       <div className="ps-spine-card" style={cardStyle}>
-        {isMobile && markImg}
+        {markImg}
         <div className="ps-spine-year" style={yearStyleInCard}>{entry.period}</div>
         <h3 style={psStyles.roleH}>{entry.isPlaceholder ? <Ph>{entry.role}</Ph> : entry.role}</h3>
         <p style={psStyles.roleOrg}>{entry.isPlaceholder ? <Ph>{entry.org}</Ph> : entry.org} · {entry.location}</p>
@@ -1095,7 +1077,7 @@ function PaperSpine({ tweaks = {} }) {
 
         <footer className="ps-print-hide" style={{ ...psStyles.foot, ...(responsive.foot || {}) }}>
           <span>© 2026 koji abe</span>
-          <span><PSHeaderStrip lowercase /></span>
+          <span><PSHeaderStrip lowercase splitTemp={isNarrow} /></span>
         </footer>
       </div>
       </div>
