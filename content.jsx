@@ -22,10 +22,10 @@ const SHORT_BIO = {
 };
 
 const LONG_BIO_PARAGRAPHS = [
-  "Koji Abe is a Research Data Scientist and computational biologist focused on reliable, reproducible machine-learning workflows for biomedical research.",
-  "He previously worked at Stanford Medicine's Human Immune Monitoring Center, building multi-omics biomarker modeling pipelines with generalization testing, interpretability, and scalable execution on Stanford's Marlowe GPU/HPC cluster. He also develops enablement tools — such as an R Shiny application for immunoassay QC and reporting — to standardize analyses and reduce ad-hoc burden for collaborators.",
+  "Research data scientist and computational biologist building reliable, reproducible machine-learning workflows for biomedical research.",
+  "Previously at Stanford Medicine's Human Immune Monitoring Center: multi-omics biomarker pipelines on Marlowe HPC, and enablement tools (immunoassay QC, reporting in R Shiny) that standardize analyses for collaborators.",
   "Koji is currently a Research Data Scientist on the Marlowe research-computing enablement team, supporting researchers with GPU/HPC workflows, performance debugging, and reproducible best practices.",
-  "Earlier, Koji worked in industry as a wet-lab professional in rapid diagnostic development — including a COVID-19 rapid antigen test program that contributed to FDA Emergency Use Authorization.",
+  "Earlier, wet-lab rapid diagnostics in industry — including a COVID-19 rapid antigen test program that contributed to FDA Emergency Use Authorization.",
   "He holds a PhD in Bioengineering from the University of Washington.",
 ];
 

@@ -892,7 +892,7 @@ function PSSpineRow({ entry, side, isLast, responsive, reduceMotion, scrollRef }
   const markImg = entry.lab && (
     <img
       className="ps-spine-mark"
-      src={entry.lab === "wet" ? "./lab-marks-blue/wet-droplet-chop.svg?v=4" : "./lab-marks-blue/dry-prompt.svg?v=2"}
+      src={entry.lab === "wet" ? "./lab-marks-blue/wet-droplet-chop.svg?v=5" : "./lab-marks-blue/dry-prompt.svg?v=2"}
       width="24" height="24"
       alt={`${entry.lab} lab`}
       style={markStyle}
@@ -1074,7 +1074,7 @@ function PaperSpine({ tweaks = {} }) {
         {/* Contact */}
         <section style={psStyles.block} id="contact">
           <h2 style={psStyles.sectionH}>
-            <span>Contact</span>
+            <span>Elsewhere</span>
             <span style={psStyles.sectionMeta}>i reply</span>
           </h2>
           <div style={{ ...psStyles.contactGrid, ...(responsive.contactGrid || {}) }}>
