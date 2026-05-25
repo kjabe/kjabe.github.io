@@ -806,7 +806,7 @@ function useScrollReveal(scrollRef, { threshold = 0.25 } = {}) {
 // computed from the user's clock; temperature is fetched from Open-Meteo
 // (no API key, free). If the fetch fails the temperature half just
 // disappears — no error UI.
-function PSHeaderStrip({ lowercase = false, splitTemp = false } = {}) {
+function PSHeaderStrip({ lowercase = false, stacked = false } = {}) {
   let dateStr = new Date().toLocaleDateString(undefined, {
     weekday: "long", year: "numeric", month: "long", day: "numeric",
   });
@@ -828,16 +828,23 @@ function PSHeaderStrip({ lowercase = false, splitTemp = false } = {}) {
       .catch(() => { /* swallow — just don't show temp */ });
     return () => { cancelled = true; };
   }, []);
-  // Date and location always travel together as one inline run.
-  // splitTemp = true → temperature breaks onto its own line (used by the
-  // footer on narrow widths where the full strip would otherwise overflow).
+  // stacked = true → date / location / temp each on their own line (footer
+  // uses this on narrow widths so the strip never collides with the copyright).
+  // stacked = false → one inline run "date · stanford, ca · temp" (the
+  // footer's desktop/mid-mobile rendering).
+  if (stacked) {
+    return (
+      <React.Fragment>
+        <span>{dateStr}</span><br />
+        <span>stanford, ca</span>
+        {temp && <React.Fragment><br /><span>{temp.c} °C / {temp.f} °F</span></React.Fragment>}
+      </React.Fragment>
+    );
+  }
   return (
     <React.Fragment>
       <span>{dateStr} · stanford, ca</span>
-      {temp && (splitTemp
-        ? <React.Fragment><br /><span>{temp.c} °C / {temp.f} °F</span></React.Fragment>
-        : <span> · {temp.c} °C / {temp.f} °F</span>
-      )}
+      {temp && <span> · {temp.c} °C / {temp.f} °F</span>}
     </React.Fragment>
   );
 }
@@ -885,7 +892,7 @@ function PSSpineRow({ entry, side, isLast, responsive, reduceMotion, scrollRef }
   const markImg = entry.lab && (
     <img
       className="ps-spine-mark"
-      src={entry.lab === "wet" ? "./lab-marks-blue/wet-droplet-chop.svg?v=2" : "./lab-marks-blue/dry-prompt.svg?v=2"}
+      src={entry.lab === "wet" ? "./lab-marks-blue/wet-droplet-chop.svg?v=3" : "./lab-marks-blue/dry-prompt.svg?v=2"}
       width="24" height="24"
       alt={`${entry.lab} lab`}
       style={markStyle}
@@ -1082,7 +1089,7 @@ function PaperSpine({ tweaks = {} }) {
 
         <footer className="ps-print-hide" style={{ ...psStyles.foot, ...(responsive.foot || {}) }}>
           <span>© 2026 koji abe</span>
-          <span><PSHeaderStrip lowercase splitTemp={isNarrow} /></span>
+          <span><PSHeaderStrip lowercase stacked={isNarrow} /></span>
         </footer>
       </div>
       </div>
