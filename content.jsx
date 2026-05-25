@@ -37,12 +37,10 @@ const NOW = {
 const LOCATION = { text: "Stanford, California", isPlaceholder: false };
 
 // Off the clock — supplemental personal info shown between Selected projects
-// and Elsewhere on the live site. Placeholder until the user provides the
-// real blog URL + final wording.
+// and Elsewhere on the live site. Blog URL pending; when added, append an
+// <a> in the section JSX and reintroduce blogUrl/blogLabel here.
 const OFF_THE_CLOCK = {
-  text: "Pickup soccer when the weather cooperates, and classical piano at home. Occasional notes at",
-  blogUrl: "https://blog.kjabe.dev",
-  blogLabel: "blog.kjabe.dev",
+  text: "Arsenal supporter (Gooner). Jazz/pop piano at home. Blog to be updated.",
   isPlaceholder: true,
 };
 
