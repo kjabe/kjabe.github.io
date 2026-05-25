@@ -36,6 +36,16 @@ const NOW = {
 
 const LOCATION = { text: "Stanford, California", isPlaceholder: false };
 
+// Off the clock — supplemental personal info shown between Selected projects
+// and Elsewhere on the live site. Placeholder until the user provides the
+// real blog URL + final wording.
+const OFF_THE_CLOCK = {
+  text: "Pickup soccer when the weather cooperates, and classical piano at home. Occasional notes at",
+  blogUrl: "https://blog.kjabe.dev",
+  blogLabel: "blog.kjabe.dev",
+  isPlaceholder: true,
+};
+
 const PROJECTS = [
   {
     title: "Marlowe",
@@ -341,6 +351,7 @@ Object.assign(window, {
     longBioParagraphs: LONG_BIO_PARAGRAPHS,
     now: NOW,
     location: LOCATION,
+    offTheClock: OFF_THE_CLOCK,
     projects: PROJECTS,
     experience: EXPERIENCE,
     education: EDUCATION,

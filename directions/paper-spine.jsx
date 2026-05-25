@@ -892,7 +892,7 @@ function PSSpineRow({ entry, side, isLast, responsive, reduceMotion, scrollRef }
   const markImg = entry.lab && (
     <img
       className="ps-spine-mark"
-      src={entry.lab === "wet" ? "./lab-marks-blue/wet-droplet-chop.svg?v=5" : "./lab-marks-blue/dry-prompt.svg?v=2"}
+      src={entry.lab === "wet" ? "./lab-marks-blue/wet-droplet-chop.svg?v=6" : "./lab-marks-blue/dry-prompt.svg?v=2"}
       width="24" height="24"
       alt={`${entry.lab} lab`}
       style={markStyle}
@@ -1071,7 +1071,24 @@ function PaperSpine({ tweaks = {} }) {
           ))}
         </section>
 
-        {/* Contact */}
+        {/* Off the clock — supplemental personal info */}
+        <section style={psStyles.block} id="off-the-clock">
+          <h2 style={psStyles.sectionH}>
+            <span>Off the clock</span>
+            <span style={psStyles.sectionMeta}>personal</span>
+          </h2>
+          <p style={psStyles.aboutP}>
+            {c.offTheClock.isPlaceholder ? <Ph>{c.offTheClock.text}</Ph> : c.offTheClock.text}
+            {" "}
+            <a href={c.offTheClock.blogUrl} style={psStyles.link} target="_blank" rel="noopener">
+              {c.offTheClock.isPlaceholder
+                ? <Ph>{`${c.offTheClock.blogLabel} →`}</Ph>
+                : `${c.offTheClock.blogLabel} →`}
+            </a>
+          </p>
+        </section>
+
+        {/* Elsewhere */}
         <section style={psStyles.block} id="contact">
           <h2 style={psStyles.sectionH}>
             <span>Elsewhere</span>
