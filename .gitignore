@@ -1,0 +1,30 @@
+# System
+.DS_Store
+
+# Design canvas (used locally for iteration; not part of the public site)
+Personal Website.html
+design-canvas.jsx
+tweaks-panel.jsx
+logo-concepts.html
+seal-variations.html
+
+# Alternate directions (only paper-spine.jsx ships)
+directions/paper.jsx
+directions/timeline-spine.jsx
+directions/explorations.jsx
+
+# Internal docs
+README.md
+design-feedback.md
+how-to-experiment.md
+DEPLOY.md
+
+# Older non-blue lab marks (superseded by lab-marks-blue/)
+lab-marks/
+
+# Design-system internals
+lab-marks-blue/README.md
+lab-marks-blue/preview.html
+lab-marks-blue/candidates/
+lab-marks-blue/png/
+project-marks/preview.html

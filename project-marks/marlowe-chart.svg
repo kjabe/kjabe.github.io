@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Marlowe — usage bar chart">
+
+  <line x1="8" y1="88" x2="92" y2="88" stroke="#355a85" stroke-width="6" stroke-linecap="round"></line>
+  <line x1="8" y1="88" x2="8" y2="14" stroke="#355a85" stroke-width="6" stroke-linecap="round"></line>
+  <rect x="22" y="58" width="12" height="28" fill="#355a85"></rect>
+  <rect x="40" y="42" width="12" height="46" fill="#355a85"></rect>
+  <rect x="58" y="26" width="12" height="62" fill="#355a85"></rect>
+  <rect x="76" y="34" width="12" height="54" fill="#355a85"></rect>
+</svg>

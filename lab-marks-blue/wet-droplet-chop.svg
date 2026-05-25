@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Wet lab mark — flask + drop (slate blue)">
+  <!-- chassis -->
+  <path d="M 19 5 L 81 5 A 14 14 0 0 1 95 19 L 95 81 A 14 14 0 0 1 81 95 L 19 95 A 14 14 0 0 1 5 81 L 5 19 A 14 14 0 0 1 19 5 Z"
+        stroke="#355a85" stroke-width="9" fill="none" stroke-linejoin="miter"/>
+  <!-- flask body -->
+  <path d="M 42 28 L 42 44 L 30 70 A 6 6 0 0 0 35 78 L 65 78 A 6 6 0 0 0 70 70 L 58 44 L 58 28"
+        stroke="#355a85" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- fill-level line inside the flask -->
+  <line x1="36" y1="64" x2="64" y2="64" stroke="#355a85" stroke-width="7" stroke-linecap="round"/>
+</svg>

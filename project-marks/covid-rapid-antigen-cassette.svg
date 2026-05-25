@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="COVID rapid antigen — cassette with C/T lines">
+
+  <rect x="4" y="32" width="92" height="36" rx="8" stroke="#355a85" stroke-width="7" fill="none"></rect>
+  <circle cx="22" cy="50" r="8" stroke="#355a85" stroke-width="5" fill="none"></circle>
+  <rect x="38" y="40" width="50" height="20" stroke="#355a85" stroke-width="4" fill="none"></rect>
+  <line x1="52" y1="40" x2="52" y2="60" stroke="#355a85" stroke-width="5"></line>
+  <line x1="74" y1="40" x2="74" y2="60" stroke="#355a85" stroke-width="5"></line>
+</svg>

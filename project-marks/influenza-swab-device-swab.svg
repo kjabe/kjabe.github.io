@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Influenza swab — cotton swab">
+
+  
+  <line x1="86" y1="14" x2="34" y2="66" stroke="#355a85" stroke-width="6" stroke-linecap="round"></line>
+  
+  <ellipse cx="22" cy="78" rx="13" ry="9" transform="rotate(-45 22 78)" stroke="#355a85" stroke-width="6" fill="none"></ellipse>
+  
+  <g fill="#355a85">
+    <circle cx="18" cy="74" r="1.6"></circle><circle cx="24" cy="76" r="1.6"></circle><circle cx="20" cy="82" r="1.6"></circle><circle cx="26" cy="82" r="1.6"></circle>
+  </g>
+  
+  <line x1="84" y1="8" x2="92" y2="16" stroke="#355a85" stroke-width="6" stroke-linecap="round"></line>
+</svg>

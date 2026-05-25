@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Koji Abe — Research Data Scientist</title>
+<meta name="description" content="Research Data Scientist on Stanford's Marlowe research-computing enablement team. Computational biology, multi-omics ML, reproducible workflows." />
+
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="Koji Abe — Research Data Scientist" />
+<meta property="og:description" content="Research Data Scientist on Stanford's Marlowe research-computing enablement team. Computational biology, multi-omics ML, reproducible workflows." />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Koji Abe — Research Data Scientist" />
+<meta name="twitter:description" content="Stanford · Marlowe research computing · multi-omics ML · PhD UW Bioengineering" />
+
+<!-- KA seal favicon: bitten-rounded monogram. Adapts ink color via prefers-color-scheme so it stays legible on light + dark browser tabs. -->
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><style>svg{color:%2314130f}@media(prefers-color-scheme:dark){svg{color:%23f0eee9}}</style><defs><mask id="b"><rect width="100" height="100" fill="white"/><circle cx="95" cy="95" r="5" fill="black"/></mask></defs><path d="M 19 5 L 81 5 A 14 14 0 0 1 95 19 L 95 95 L 19 95 A 14 14 0 0 1 5 81 L 5 19 A 14 14 0 0 1 19 5 Z" stroke="currentColor" stroke-width="6" fill="none" stroke-linejoin="miter" mask="url(%23b)"/><text x="50" y="52" text-anchor="middle" dominant-baseline="central" font-family="Georgia,serif" font-weight="600" font-size="42" fill="currentColor">KA</text><circle cx="82" cy="82" r="5" fill="currentColor"/></svg>' />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Archivo+Black&display=swap" rel="stylesheet" />
+
+<style>
+  /* PaperSpine owns its own scroll container (psStyles.root has overflowY:auto + height:100%).
+     The page is a fixed-viewport host; the content area scrolls internally. This matches
+     how Personal Website.html embeds PaperSpine inside a fixed-height artboard, which is
+     what useScrollReveal expects when it attaches scroll listeners. */
+  html, body { margin: 0; padding: 0; height: 100%; background: #f0eee9; overflow: hidden; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
+  * { box-sizing: border-box; }
+  #app { width: 100%; height: 100%; }
+  .ph { cursor: help; }
+</style>
+</head>
+<body>
+
+<div id="app"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="content.jsx"></script>
+<script type="text/babel" src="directions/paper-spine.jsx"></script>
+
+<script type="text/babel" data-presets="react">
+  // Defaults match Personal Website.html's TWEAK_DEFAULTS so the deployed view
+  // matches what you've been reviewing in the design canvas.
+  const TWEAKS = {
+    theme: "light",
+    density: "comfortable",
+    sections: { about: true, now: true, projects: true, writing: true, contact: true },
+    logoColor: "#14130f",
+    logoStyle: "seal-bitten-rounded",
+  };
+  ReactDOM.createRoot(document.getElementById("app")).render(<PaperSpine tweaks={TWEAKS} />);
+</script>
+
+</body>
+</html>

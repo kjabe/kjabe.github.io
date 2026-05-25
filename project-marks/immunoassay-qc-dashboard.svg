@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Immunoassay QC — Shiny dashboard">
+
+  <rect x="6" y="10" width="88" height="80" rx="4" stroke="#355a85" stroke-width="6" fill="none"></rect>
+  <line x1="6" y1="30" x2="94" y2="30" stroke="#355a85" stroke-width="5"></line>
+  <circle cx="14" cy="20" r="3" fill="#355a85"></circle>
+  <line x1="22" y1="20" x2="60" y2="20" stroke="#355a85" stroke-width="4" stroke-linecap="round"></line>
+  <rect x="16" y="48" width="8" height="14" fill="#355a85"></rect>
+  <rect x="28" y="40" width="8" height="22" fill="#355a85"></rect>
+  <rect x="40" y="50" width="8" height="12" fill="#355a85"></rect>
+  <rect x="52" y="38" width="8" height="24" fill="#355a85"></rect>
+  <rect x="64" y="44" width="8" height="18" fill="#355a85"></rect>
+  <rect x="76" y="46" width="8" height="16" fill="#355a85"></rect>
+  <line x1="6" y1="68" x2="94" y2="68" stroke="#355a85" stroke-width="5"></line>
+  <polyline points="14,82 26,76 38,84 50,72 62,78 74,68 86,74" stroke="#355a85" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"></polyline>
+</svg>

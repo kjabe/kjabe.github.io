@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Inkjet — colorimetric multianalyte wells">
+
+  
+  <circle cx="18" cy="28" r="10" fill="#355a85"></circle>
+  <circle cx="40" cy="28" r="10" stroke="#355a85" stroke-width="5" fill="none"></circle>
+  <circle cx="62" cy="28" r="10" fill="#355a85" opacity="0.55"></circle>
+  <circle cx="84" cy="28" r="10" stroke="#355a85" stroke-width="5" stroke-dasharray="3 3" fill="none"></circle>
+  
+  <circle cx="18" cy="72" r="10" fill="#355a85" opacity="0.35"></circle>
+  <circle cx="40" cy="72" r="10" fill="#355a85"></circle>
+  <circle cx="62" cy="72" r="10" stroke="#355a85" stroke-width="5" fill="none"></circle>
+  <circle cx="84" cy="72" r="10" fill="#355a85" opacity="0.7"></circle>
+  
+  <line x1="6" y1="50" x2="94" y2="50" stroke="#355a85" stroke-width="3" stroke-dasharray="2 4" stroke-linecap="round"></line>
+</svg>

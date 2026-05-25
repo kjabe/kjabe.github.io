@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Marlowe — HPC server rack">
+
+  <rect x="14" y="10" width="72" height="80" rx="4" stroke="#355a85" stroke-width="7" fill="none"></rect>
+  <line x1="14" y1="36" x2="86" y2="36" stroke="#355a85" stroke-width="5"></line>
+  <line x1="14" y1="62" x2="86" y2="62" stroke="#355a85" stroke-width="5"></line>
+  <g fill="#355a85"><circle cx="24" cy="23" r="3"></circle><circle cx="24" cy="49" r="3"></circle><circle cx="24" cy="76" r="3"></circle></g>
+  <g stroke="#355a85" stroke-width="4" stroke-linecap="round">
+    <line x1="36" y1="23" x2="78" y2="23"></line>
+    <line x1="36" y1="49" x2="78" y2="49"></line>
+    <line x1="36" y1="76" x2="78" y2="76"></line>
+  </g>
+</svg>

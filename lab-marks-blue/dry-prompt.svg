@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Dry lab mark — prompt (slate blue)">
+  
+  <path d="M 19 5 L 81 5 A 14 14 0 0 1 95 19 L 95 81 A 14 14 0 0 1 81 95 L 19 95 A 14 14 0 0 1 5 81 L 5 19 A 14 14 0 0 1 19 5 Z" stroke="#355a85" stroke-width="9" fill="none"></path>
+  <polyline points="32,32 56,50 32,68" stroke="#355a85" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"></polyline>
+  <line x1="60" y1="68" x2="76" y2="68" stroke="#355a85" stroke-width="12" stroke-linecap="round"></line>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Inkjet microfluidic — Y-channel paper chip">
+
+  
+  <circle cx="50" cy="14" r="8" stroke="#355a85" stroke-width="5" fill="none"></circle>
+  
+  <path d="M 50 22 L 50 44 M 50 44 L 22 64 M 50 44 L 50 64 M 50 44 L 78 64" stroke="#355a85" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
+  
+  <circle cx="22" cy="78" r="10" fill="#355a85"></circle>
+  <circle cx="50" cy="78" r="10" stroke="#355a85" stroke-width="5" fill="none"></circle>
+  <circle cx="78" cy="78" r="10" fill="#355a85" opacity="0.55"></circle>
+</svg>

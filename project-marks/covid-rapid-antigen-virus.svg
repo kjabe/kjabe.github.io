@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="COVID — coronavirus virion">
+
+  <circle cx="50" cy="50" r="22" stroke="#355a85" stroke-width="6" fill="none"></circle>
+  <g stroke="#355a85" stroke-width="5" stroke-linecap="round">
+    <line x1="50" y1="28" x2="50" y2="12"></line>
+    <line x1="50" y1="72" x2="50" y2="88"></line>
+    <line x1="28" y1="50" x2="12" y2="50"></line>
+    <line x1="72" y1="50" x2="88" y2="50"></line>
+    <line x1="34.4" y1="34.4" x2="23" y2="23"></line>
+    <line x1="65.6" y1="34.4" x2="77" y2="23"></line>
+    <line x1="34.4" y1="65.6" x2="23" y2="77"></line>
+    <line x1="65.6" y1="65.6" x2="77" y2="77"></line>
+  </g>
+  <g fill="#355a85">
+    <circle cx="50" cy="8" r="4"></circle><circle cx="50" cy="92" r="4"></circle>
+    <circle cx="8" cy="50" r="4"></circle><circle cx="92" cy="50" r="4"></circle>
+    <circle cx="20" cy="20" r="4"></circle><circle cx="80" cy="20" r="4"></circle>
+    <circle cx="20" cy="80" r="4"></circle><circle cx="80" cy="80" r="4"></circle>
+  </g>
+</svg>
