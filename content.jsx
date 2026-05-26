@@ -234,9 +234,9 @@ const CAREER_TIMELINE = [
     end: "2022",
     period: "2018 — 2022",
     role: "Diagnostic Development",
-    org: "InBios → Inflammatix",
-    orgLong: "Industry — InBios, then Inflammatix",
-    location: "—",
+    org: "InBios · Seattle, WA → Inflammatix",
+    orgLong: "Industry — InBios (Seattle, WA), then Inflammatix (Sunnyvale, CA)",
+    location: "Sunnyvale, CA",
     kind: "work",
     blurb:
       "At InBios: led development of an Anthrax rapid test that received FDA marketing rights through the De Novo classification process, and contributed to a COVID-19 rapid antigen test program that received EUA approval at the height of the pandemic. Then at Inflammatix: sepsis diagnostic.",
