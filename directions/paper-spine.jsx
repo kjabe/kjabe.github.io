@@ -1081,7 +1081,7 @@ function PaperSpine({ tweaks = {} }) {
               <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
                 {c.offTheClock.items.map((it, i) => (
                   <img key={i} src={it.mark} alt={it.alt}
-                       width="32" height="32"
+                       width={isMobile ? 32 : 40} height={isMobile ? 32 : 40}
                        style={{ opacity: 0.85, display: "block" }}/>
                 ))}
               </span>
