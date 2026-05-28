@@ -3,7 +3,7 @@
   <path d="M 19 5 L 81 5 A 14 14 0 0 1 95 19 L 95 81 A 14 14 0 0 1 81 95 L 19 95 A 14 14 0 0 1 5 81 L 5 19 A 14 14 0 0 1 19 5 Z"
         stroke="#355a85" stroke-width="9" fill="#ffffff" stroke-linejoin="miter"/>
   <!-- trail (single stroked line; drawn first so the wheel renders on top of it) -->
-  <line x1="30" y1="72" x2="14" y2="86"
+  <line x1="30" y1="72" x2="18" y2="82"
         stroke="#355a85" stroke-width="5" stroke-linecap="round"/>
   <!-- wheel -->
   <circle cx="34" cy="62" r="18" fill="none" stroke="#355a85" stroke-width="6"/>
