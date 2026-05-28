@@ -1071,29 +1071,25 @@ function PaperSpine({ tweaks = {} }) {
           ))}
         </section>
 
-        {/* Off the clock — supplemental personal info, one paragraph per
-            interest with a leading personal-mark icon, trailing blog note
-            aligned with the text column above. */}
+        {/* Off the clock — supplemental personal info. Personal-mark icons
+            sit inline with the heading (right after "Off the clock"); body
+            is a single flowing paragraph. */}
         <section style={psStyles.block} id="off-the-clock">
           <h2 style={psStyles.sectionH}>
-            <span>Off the clock</span>
+            <span style={{ display: "inline-flex", alignItems: "center", gap: 12 }}>
+              <span>Off the clock</span>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
+                {c.offTheClock.items.map((it, i) => (
+                  <img key={i} src={it.mark} alt={it.alt}
+                       width="20" height="20"
+                       style={{ opacity: 0.85, display: "block" }}/>
+                ))}
+              </span>
+            </span>
             <span style={psStyles.sectionMeta}>personal</span>
           </h2>
-          {c.offTheClock.items.map((it, i) => (
-            <p key={i}
-               style={{ ...psStyles.aboutP,
-                        display: "flex", alignItems: "flex-start", gap: 12,
-                        marginBottom: 10 }}>
-              <img src={it.mark} alt={it.alt}
-                   width="28" height="28"
-                   style={{ flexShrink: 0, marginTop: 2 }}/>
-              <span>
-                {c.offTheClock.isPlaceholder ? <Ph>{it.text}</Ph> : it.text}
-              </span>
-            </p>
-          ))}
-          <p style={{ ...psStyles.aboutP, marginLeft: 40 }}>
-            {c.offTheClock.isPlaceholder ? <Ph>{c.offTheClock.outro}</Ph> : c.offTheClock.outro}
+          <p style={psStyles.aboutP}>
+            {c.offTheClock.isPlaceholder ? <Ph>{c.offTheClock.text}</Ph> : c.offTheClock.text}
           </p>
         </section>
 

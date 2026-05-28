@@ -37,23 +37,15 @@ const NOW = {
 const LOCATION = { text: "Stanford, California", isPlaceholder: false };
 
 // Off the clock — supplemental personal info shown between Selected projects
-// and Elsewhere on the live site. `items` carry their own personal-mark icon
-// (rendered as a leading 28-px badge); `outro` is a small trailing note.
-// When a real blog URL exists, swap the outro for a linked label.
+// and Elsewhere on the live site. `items` carry the personal-mark icons that
+// sit inline with the section heading; `text` is the single-paragraph body
+// covering all the interests + the trailing blog note.
 const OFF_THE_CLOCK = {
   items: [
-    {
-      mark: "./personal-marks/arsenal-field.svg",
-      alt: "Field cannon mark",
-      text: "Arsenal supporter — Gooner enough to set alarms for the early-morning Pacific kickoffs.",
-    },
-    {
-      mark: "./personal-marks/piano-staff.svg",
-      alt: "Staff + piano keyboard mark",
-      text: "Jazz and pop piano at home, mostly for the chord changes.",
-    },
+    { mark: "./personal-marks/arsenal-field.svg", alt: "Field cannon mark" },
+    { mark: "./personal-marks/piano-staff.svg", alt: "Staff + piano keyboard mark" },
   ],
-  outro: "A blog is in the works; link to follow.",
+  text: "Arsenal supporter — Gooner enough to set alarms for the early-morning Pacific kickoffs. Jazz and pop piano at home, mostly for the chord changes. A blog is in the works; link to follow.",
   isPlaceholder: true,
 };
 
