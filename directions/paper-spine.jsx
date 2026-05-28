@@ -1076,12 +1076,12 @@ function PaperSpine({ tweaks = {} }) {
             is a single flowing paragraph. */}
         <section style={psStyles.block} id="off-the-clock">
           <h2 style={psStyles.sectionH}>
-            <span style={{ display: "inline-flex", alignItems: "center", gap: 12 }}>
+            <span style={{ display: "inline-flex", alignItems: "center", gap: 14 }}>
               <span>Off the clock</span>
-              <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
                 {c.offTheClock.items.map((it, i) => (
                   <img key={i} src={it.mark} alt={it.alt}
-                       width="20" height="20"
+                       width="32" height="32"
                        style={{ opacity: 0.85, display: "block" }}/>
                 ))}
               </span>
