@@ -42,8 +42,8 @@ const LOCATION = { text: "Stanford, California", isPlaceholder: false };
 // covering all the interests + the trailing blog note.
 const OFF_THE_CLOCK = {
   items: [
-    { mark: "./personal-marks/arsenal-field.svg?v=1", alt: "Field cannon mark" },
-    { mark: "./personal-marks/piano-staff.svg?v=1", alt: "Staff + piano keyboard mark" },
+    { mark: "./personal-marks/arsenal-field.svg?v=2", alt: "Field cannon mark" },
+    { mark: "./personal-marks/piano-staff.svg?v=2", alt: "Staff + piano keyboard mark" },
   ],
   text: "Arsenal supporter — Gooner enough to set alarms for the early-morning Pacific kickoffs. Jazz and pop piano at home, mostly for the chord changes. A blog is in the works; link to follow.",
   isPlaceholder: true,

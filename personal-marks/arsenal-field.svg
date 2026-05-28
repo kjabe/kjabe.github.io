@@ -1,27 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Personal — field cannon on wheel">
-  <!-- chassis (matches wet/dry lab marks): slate-blue outline + white interior -->
+  <!-- chassis (matches lab marks): slate-blue outline + white interior -->
   <path d="M 19 5 L 81 5 A 14 14 0 0 1 95 19 L 95 81 A 14 14 0 0 1 81 95 L 19 95 A 14 14 0 0 1 5 81 L 5 19 A 14 14 0 0 1 19 5 Z"
         stroke="#355a85" stroke-width="9" fill="#ffffff" stroke-linejoin="miter"/>
-  <!-- cannon contents, scaled into the chassis interior (x=10..90, y=10..90) -->
-  <g transform="translate(10 10) scale(0.8)">
-    <!-- wheel -->
-    <circle cx="34" cy="66" r="22" fill="none" stroke="#355a85" stroke-width="5"/>
-    <!-- hub (small filled accent) -->
-    <circle cx="34" cy="66" r="4" fill="#355a85"/>
-    <!-- spokes -->
-    <g stroke="#355a85" stroke-width="3" stroke-linecap="round">
-      <line x1="34" y1="46" x2="34" y2="86"/>
-      <line x1="14" y1="66" x2="54" y2="66"/>
-      <line x1="20" y1="52" x2="48" y2="80"/>
-      <line x1="20" y1="80" x2="48" y2="52"/>
-    </g>
-    <!-- trail (small filled accent behind wheel) -->
-    <path d="M 28 70 L 10 86 L 14 90 L 36 72 Z" fill="#355a85"/>
-    <!-- barrel (stroked outline) -->
-    <path d="M 30 48 L 86 28 L 90 36 L 34 56 Z"
-          fill="none" stroke="#355a85" stroke-width="4"
-          stroke-linejoin="round" stroke-linecap="round"/>
-    <!-- muzzle cap (small filled accent at the barrel tip) -->
-    <rect x="84" y="24" width="6" height="14" rx="1" fill="#355a85" transform="rotate(-19 87 31)"/>
+  <!-- trail (single stroked line; drawn first so the wheel renders on top of it) -->
+  <line x1="30" y1="72" x2="14" y2="86"
+        stroke="#355a85" stroke-width="5" stroke-linecap="round"/>
+  <!-- wheel -->
+  <circle cx="34" cy="62" r="18" fill="none" stroke="#355a85" stroke-width="6"/>
+  <!-- 4 spokes -->
+  <g stroke="#355a85" stroke-width="5" stroke-linecap="round">
+    <line x1="34" y1="44" x2="34" y2="80"/>
+    <line x1="16" y1="62" x2="52" y2="62"/>
+    <line x1="21.27" y1="49.27" x2="46.73" y2="74.73"/>
+    <line x1="21.27" y1="74.73" x2="46.73" y2="49.27"/>
   </g>
+  <!-- hub (small filled accent at wheel center) -->
+  <circle cx="34" cy="62" r="4" fill="#355a85"/>
+  <!-- barrel (parallelogram outline) -->
+  <path d="M 30 48 L 80 32 L 84 40 L 34 56 Z"
+        fill="none" stroke="#355a85" stroke-width="6"
+        stroke-linejoin="round" stroke-linecap="round"/>
 </svg>
