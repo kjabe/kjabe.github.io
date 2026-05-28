@@ -2,24 +2,17 @@
   <!-- chassis (matches lab marks): slate-blue outline + white interior -->
   <path d="M 19 5 L 81 5 A 14 14 0 0 1 95 19 L 95 81 A 14 14 0 0 1 81 95 L 19 95 A 14 14 0 0 1 5 81 L 5 19 A 14 14 0 0 1 19 5 Z"
         stroke="#355a85" stroke-width="9" fill="#ffffff" stroke-linejoin="miter"/>
-  <!-- piano body outline -->
-  <rect x="16" y="20" width="68" height="60" rx="3"
+  <!-- piano body outline (narrower than 7-key version to keep key proportions clean) -->
+  <rect x="20" y="20" width="60" height="60" rx="3"
         stroke="#355a85" stroke-width="6" fill="none"/>
-  <!-- white-key dividers (6 lines = 7 white keys, one octave) -->
+  <!-- white-key dividers (2 lines = 3 white keys: C, D, E) -->
   <g stroke="#355a85" stroke-width="4" stroke-linecap="round">
-    <line x1="25.71" y1="20" x2="25.71" y2="80"/>
-    <line x1="35.43" y1="20" x2="35.43" y2="80"/>
-    <line x1="45.14" y1="20" x2="45.14" y2="80"/>
-    <line x1="54.86" y1="20" x2="54.86" y2="80"/>
-    <line x1="64.57" y1="20" x2="64.57" y2="80"/>
-    <line x1="74.29" y1="20" x2="74.29" y2="80"/>
+    <line x1="40" y1="20" x2="40" y2="80"/>
+    <line x1="60" y1="20" x2="60" y2="80"/>
   </g>
-  <!-- black keys (5: C# D# (skip between E-F) F# G# A#) -->
+  <!-- black keys (2: C# on the C-D divider, D# on the D-E divider) -->
   <g fill="#355a85">
-    <rect x="22.71" y="20" width="6" height="36" rx="1"/>
-    <rect x="32.43" y="20" width="6" height="36" rx="1"/>
-    <rect x="51.86" y="20" width="6" height="36" rx="1"/>
-    <rect x="61.57" y="20" width="6" height="36" rx="1"/>
-    <rect x="71.29" y="20" width="6" height="36" rx="1"/>
+    <rect x="34" y="20" width="12" height="36" rx="1"/>
+    <rect x="54" y="20" width="12" height="36" rx="1"/>
   </g>
 </svg>
