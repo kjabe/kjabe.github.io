@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Personal — sourdough batard with scores">
+  <!-- chassis (matches lab marks): slate-blue outline + white interior -->
+  <path d="M 19 5 L 81 5 A 14 14 0 0 1 95 19 L 95 81 A 14 14 0 0 1 81 95 L 19 95 A 14 14 0 0 1 5 81 L 5 19 A 14 14 0 0 1 19 5 Z"
+        stroke="#355a85" stroke-width="9" fill="#ffffff" stroke-linejoin="miter"/>
+  <!-- batard loaf (filled silhouette, side profile) -->
+  <path d="M 14 60 Q 14 40 50 40 Q 86 40 86 60 Q 86 76 50 76 Q 14 76 14 60 Z"
+        fill="#355a85"/>
+  <!-- scoring marks (white cuts in the loaf — match the chassis interior) -->
+  <g stroke="#ffffff" stroke-width="4" stroke-linecap="round">
+    <line x1="30" y1="56" x2="40" y2="46"/>
+    <line x1="46" y1="60" x2="56" y2="48"/>
+    <line x1="62" y1="60" x2="72" y2="50"/>
+  </g>
+  <!-- counter line below the loaf -->
+  <line x1="18" y1="84" x2="82" y2="84"
+        stroke="#355a85" stroke-width="4" stroke-linecap="round"/>
+</svg>

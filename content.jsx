@@ -44,8 +44,9 @@ const OFF_THE_CLOCK = {
   items: [
     { mark: "./personal-marks/arsenal-field.svg?v=3", alt: "Field cannon mark" },
     { mark: "./personal-marks/piano-staff.svg?v=3", alt: "Staff + piano keyboard mark" },
+    { mark: "./personal-marks/sourdough-batard/sourdough-batard.svg?v=1", alt: "Sourdough batard mark" },
   ],
-  text: "Arsenal supporter — Gooner enough to set alarms for the early-morning Pacific kickoffs. Jazz and pop piano at home, mostly for the chord changes. A blog is in the works; link to follow.",
+  text: "Arsenal supporter — Gooner enough to set alarms for the early-morning Pacific kickoffs. Jazz and pop piano at home, mostly for the chord changes. Sourdough batard every week — slow craft, fresh bread out of the oven. A blog is in the works; link to follow.",
   isPlaceholder: true,
 };
 
